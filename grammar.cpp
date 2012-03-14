@@ -31,7 +31,7 @@ void grammar::readIn(string fileName){
             grammarRules.push_back(phrase);
             
         }
-        cout<<"File read Successfully!" << endl;
+        cout<<"Grammar read Successfully!" << endl;
     }
     else{
         cout<<"Failure to Read File";

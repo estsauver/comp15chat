@@ -10,12 +10,28 @@
 
 int main (int argc, const char * argv[])
 {
+    string filename;
+    if (argc != 2) {
+        cout << "usage: arv[0] filename.txt";
+    } else {
+        filename= argv[1];
+
+    }
+    
     srandom(time(NULL));
     //Testing File Input
     grammar testGrammer;
-    testGrammer.readIn("/Users/estsauver/Documents/CurrentClasses/CS15/grammar.txt");
+    testGrammer.readIn(filename);
+    
+//    testGrammer.readIn("/Users/estsauver/Documents/CurrentClasses/CS15/grammar.txt");
 //    testGrammer.printGrammar();
-    testGrammer.derive("Sentence");
+    
+    string userInput;
+    do {
+        cin >> userInput;
+        testGrammer.derive("Sentence");
+        cout<< endl;
+    } while (userInput != "q");
     return 0;
 }
 
