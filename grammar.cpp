@@ -36,7 +36,7 @@ void grammar::readIn(string fileName){
     else{
         cout<<"Failure to Read File";
     }
-    
+    inFile.close();    
 }
 
 void grammar::derive(string symbol){
@@ -55,11 +55,10 @@ void grammar::derive(string symbol){
     }else{
         //Now we need to pick a random option. Let's use random!
         int randomlySelectedIndex = random() % optionsHolder.size();
-        
         for (int i = 0; i<optionsHolder[randomlySelectedIndex].rightSide.size() ; i++){
             derive(optionsHolder[randomlySelectedIndex].rightSide[i]);
-
         }
+        
         
     }
 }

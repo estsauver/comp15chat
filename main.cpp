@@ -14,8 +14,8 @@ int main (int argc, const char * argv[])
     //Testing File Input
     grammar testGrammer;
     testGrammer.readIn("/Users/estsauver/Documents/CurrentClasses/CS15/grammar.txt");
-    testGrammer.printGrammar();
-    testGrammer.derive("NP");
+//    testGrammer.printGrammar();
+    testGrammer.derive("Sentence");
     return 0;
 }
 
