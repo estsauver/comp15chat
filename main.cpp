@@ -10,10 +10,12 @@
 
 int main (int argc, const char * argv[])
 {
+    srandom(time(NULL));
     //Testing File Input
     grammar testGrammer;
     testGrammer.readIn("/Users/estsauver/Documents/CurrentClasses/CS15/grammar.txt");
     testGrammer.printGrammar();
+    testGrammer.derive("NP");
     return 0;
 }
 

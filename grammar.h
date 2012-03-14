@@ -12,7 +12,8 @@
 #include "comp11io.h"
 #include <iostream>
 #include <vector>
-
+#include <cstdlib>
+#include <time.h>
 
 class productionRule {
     public:
@@ -28,7 +29,7 @@ public:
     vector<productionRule> grammarRules;
     
     void readIn(string fileName);
-    
+    void derive(string symbol);
     
     //Debugging Methods
     void printGrammar();

@@ -39,7 +39,30 @@ void grammar::readIn(string fileName){
     
 }
 
-void grammar::derive(
+void grammar::derive(string symbol){
+    vector<productionRule> optionsHolder;
+    
+    //Reading in all options that match production rule
+    for (int i = 0; i<grammarRules.size();i++){
+        if (grammarRules[i].leftSide == symbol){
+            optionsHolder.push_back(grammarRules[i]);
+        }
+    }
+    //If the number of options is zero then we're at the end case and should print out
+    
+    if (optionsHolder.size()==0) {
+        cout<< symbol<<" ";
+    }else{
+        //Now we need to pick a random option. Let's use random!
+        int randomlySelectedIndex = random() % optionsHolder.size();
+        
+        for (int i = 0; i<optionsHolder[randomlySelectedIndex].rightSide.size() ; i++){
+            derive(optionsHolder[randomlySelectedIndex].rightSide[i]);
+
+        }
+        
+    }
+}
 
 
 void grammar::printGrammar()
