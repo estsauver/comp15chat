@@ -1,0 +1,10 @@
+Earl St Sauver
+Assignment 2
+findings.txt
+
+a) The grammar occasionally produces very long sentences with the stock grammar because the NP phrase generally expands and very seldomly terminates. If you have one or two nodes which replicate into larger phrases than the chance that all of there derived forms terminate becomes exponentially smaller as the number of left hand symbols grows, and the number of left hand side terms grows exponentially. 
+
+b) The repeating of adjectives happens so infrequently because it requires that the same noun token be ranodmly selected twice out of five possible noun tokens. 
+c) The easiest way to solve this problemw ould be to make the number of lines in the file be proportional to the realtive frequency of their occuring. THis however does have the advantage of drastically decreasing performance if this were to be extended to a human size grammar as there would have to be a vast number of unneccssary copies of production rules. 
+
+A much better solution would be to add a frequency (float) variable to the production rule and a sumOfFrequency. If the grammar is a static file, or at least one which is only accessed very infrequently, it would be possible to generate a data structure which could also be accessed on the basis of a normalized float s.t. a random call to the individual data would be relatively trivial. 
